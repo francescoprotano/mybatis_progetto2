@@ -4,10 +4,20 @@ ISTRUZIONI:
 	
 PROBLEMI DA RISOLVERE:
 
-	- il progetto non compila. Perchè?
+	- Eseguendo la classe Test1, Test2 o Test3 ho questo errore
 	
-	- quando viene eseguita la classe Test viene inserito un record nella tabella corso ma la colonna nome contiene NULL e non "java". Perchè?
+		Exception in thread "main" org.apache.ibatis.binding.BindingException: Type interface it.exolab.mapper.StudenteMapper is not known to the MapperRegistry.
+		at org.apache.ibatis.binding.MapperRegistry.getMapper(MapperRegistry.java:47)
+		at org.apache.ibatis.session.Configuration.getMapper(Configuration.java:899)
+		at org.apache.ibatis.session.defaults.DefaultSqlSession.getMapper(DefaultSqlSession.java:291)
+		
+		
 	
-	- nel file corso.xml c'è una query findAll ma non so come chiamarla. Cosa manca?
+	- Ho sistemato il punto 1, ora se eseguo il Test1 non stampa il nome del corso ma il nome dello studente. Perchè?
+	
+	- Se eseguo il Test2 non stampa la email dello studente, eppure c'è. Perchè?
+	
+	- Se eseguo il Test3 non cancella lo studente. Perchè?
+	
 	
 	  

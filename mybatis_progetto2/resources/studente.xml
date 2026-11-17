@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="it.exolab.model.StudenteMapper">
+
+
+   <insert id="insert" parameterType="it.exolab.model.Studente" 
+  	useGeneratedKeys="true"
+    	keyProperty="id"
+  		keyColumn="id"
+  >
+  
+    insert into studente (nome,cognome,email) values (#{nome},#{cognome},#{email}) 
+  </insert>
+  
+  
+  
+
+   <update id="update" parameterType="it.exolab.model.Studente">
+  
+    update studente set nome = #{nome}  where id = #{id} 
+  </update>
+  
+   <select id="findAll" resultType="it.exolab.model.Studente" 
+  	
+  >
+    select * from studente  order by id desc 
+  </select>
+  
+  
+  
+   <select id="find" resultType="Long" 
+  	parameterType="it.exolab.model.Studente"
+  >
+    select * from studente where id = #{id}  
+  </select>
+  
+  
+  <resultMap type="it.exolab.model.Studente" id="mappa">
+  	<id property="id" column="id"/>
+  	<result property="nome" column="nome"/>
+  	<result property="cognome" column="cognome"/>
+  	<association property="corso" javaType="it.exolab.model.Corso">
+  		<id property="id" column="id"/>
+  		<result property="nome" column="nome"/>
+  	
+  	</association>
+  
+  </resultMap>
+  
+  
+   <select id="findAndJoinCorso" parameterType="Long" 
+  	resultType="it.exolab.model.Studente"
+  >
+    select s.*, c.nome as nome_corso from studente s inner join corso c on c.id = s.id_studente where s.id = #{id}  
+  </select>
+  
+   <select id="delete"  
+  	parameterType="Long"
+  >
+    delete from studente where id = #{id}   
+  </select>
+  
+
+  
+</mapper>
