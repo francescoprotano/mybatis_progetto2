@@ -4,7 +4,7 @@ ISTRUZIONI:
 	
 PROBLEMI DA RISOLVERE:
 
-	- Eseguendo la classe Test1, Test2 o Test3 ho questo errore
+	- Eseguendo la classe Test1, Test2, Test3 o Test4 ho questo errore
 	
 		Exception in thread "main" org.apache.ibatis.binding.BindingException: Type interface it.exolab.mapper.StudenteMapper is not known to the MapperRegistry.
 		at org.apache.ibatis.binding.MapperRegistry.getMapper(MapperRegistry.java:47)
@@ -18,6 +18,8 @@ PROBLEMI DA RISOLVERE:
 	- Se eseguo il Test2 non stampa la email dello studente, eppure c'è. Perchè?
 	
 	- Se eseguo il Test3 non cancella lo studente. Perchè?
+	
+	- Se eseguo il Test4 mi dà un errore nell'xml. Perchè?
 	
 	
 	  
